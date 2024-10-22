@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Solution Pattern: Name Template :: Solution Patterns for Cloud Native Architectures</title>
+    <title>Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern/04-workshop.html">
     <link rel="prev" href="03-demo.html">
     <link rel="next" href="developer-resources.html">
@@ -85,12 +85,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="02-architecture.html#tech_stack">2.1. Technology stack</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-architecture.html#in_depth">2.2. An in-depth look at the solution&#8217;s architecture</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-architecture.html#more_tech">2.3. More about the technology stack</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -100,43 +94,10 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_demonstration">3.1. Demonstration</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="03-demo.html#_run_the_demonstration">3.2. Run this demonstration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_before_getting_started">3.3. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_installing_the_demo">3.4. Installing the demo</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_walkthrough_guide">3.5. Walkthrough guide</a>
-  </li>
-</ul>
-  </li>
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="04-workshop.html">4. Workshop</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#_before_getting_started">4.2. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#_installing_the_environment">4.3. Installing the environment</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#deliver_wksp">4.4. Delivering the workshop</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="developer-resources.html">5. Developer Resources</a>
@@ -182,30 +143,138 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Solution Pattern: Name Template</h1>
+<h1 class="page">Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization</h1>
 <h1 id="_workshop" class="sect0"><a class="anchor" href="#_workshop"></a><a class="link" href="#_workshop">Workshop</a></h1>
 <div class="openblock partintro">
 <div class="content">
-what is this workshop and what will be learned
+<div class="paragraph">
+<p>Here are the workshops which are already available on demo.redhat.com:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://demo.redhat.com/catalog?search=tril&amp;item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa-with-trilio.prod">Backup and Recovery of Red Hat OpenShift Virtualization VMs using Trilio (ROSA)</a></p>
+</li>
+<li>
+<p><a href="https://demo.redhat.com/catalog?search=factory&amp;item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa.prod">OpenShift Virtualization Migration Factory Demo (ROSA)</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now we will be looking at our first scenario: Create Virtual Machines using GitOps on ROSA.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Installing the environment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create an environment using this <a href="https://demo.redhat.com/catalog?search=factory&amp;item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa.prod">link</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Delivering the workshop</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Login to the bastion host available in the above CI.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_6.png" alt="ocp virt 6" width="100%">
 </div>
 </div>
-<div class="sect1">
-<h2 id="_installing_the_workshop_environment"><a class="anchor" href="#_installing_the_workshop_environment"></a><a class="link" href="#_installing_the_workshop_environment">1. Installing the workshop environment</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_before_getting_started"><a class="anchor" href="#_before_getting_started"></a><a class="link" href="#_before_getting_started">1.1. Before getting started</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="_installing_the_environment"><a class="anchor" href="#_installing_the_environment"></a><a class="link" href="#_installing_the_environment">1.2. Installing the environment</a></h3>
-
+</li>
+<li>
+<p>Now fork this <a href="https://github.com/gmidha1/virtdemos.git">repo</a> under your github account and after that clone the repo into the bastion host.
+Configure oc cli using the admin logins.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_7.png" alt="ocp virt 7" width="100%">
 </div>
 </div>
+</li>
+<li>
+<p>Run ./bootstrap.sh from virtdemos directory. It will deploy the OpenShift GitOps operator.</p>
+</li>
+<li>
+<p>After 2 mins, you will be able to see the OpenShift GitOps operator under Installed operators in OpenShift Console.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_8.png" alt="ocp virt 8" width="100%">
 </div>
-<div class="sect1">
-<h2 id="_delivering_the_workshop"><a class="anchor" href="#_delivering_the_workshop"></a><a class="link" href="#_delivering_the_workshop">2. Delivering the workshop</a></h2>
-<div class="sectionbody">
-
+</div>
+</li>
+<li>
+<p>Now let us get the url from Routes under Networking for OpenShift GitOps server(ArgoCD) and open this url.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_9.png" alt="ocp virt 9" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>It will open the ArgoCD login screen, now click on “Login via OpenShift” and enter the credentials for OpenShift. After that we will see this screen:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_10.png" alt="ocp virt 10" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Now we will create a RHEL VM by creating an argocd app using this cli from virtdemos directory: oc apply -f apps/ap.yaml</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_11.png" alt="ocp virt 11" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>It will create an application in ArgoCD which in turn will create a RHEL Virtual Machine in OpenShift as shown in below images.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_12.png" alt="ocp virt 12" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_13.png" alt="ocp virt 13" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>We can see this virtual machine from the OpenShift console &#8594; Virtualization &#8594; Virtual Machines and we can connect it to the VM using the password we provided in rhel vm yaml.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_14.png" alt="ocp virt 14" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_15.png" alt="ocp virt 15" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_16.png" alt="ocp virt 16" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_17.png" alt="ocp virt 17" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Now we have successfully deployed a RHEL VM using GitOps in OpenShift and are able to access it using the credentials.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <nav class="pagination">

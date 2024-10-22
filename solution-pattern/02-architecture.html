@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Solution Pattern: Name Template :: Solution Patterns for Cloud Native Architectures</title>
+    <title>Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern/02-architecture.html">
     <link rel="prev" href="index.html">
     <link rel="next" href="03-demo.html">
@@ -85,12 +85,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#tech_stack">2.1. Technology stack</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#in_depth">2.2. An in-depth look at the solution&#8217;s architecture</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#more_tech">2.3. More about the technology stack</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -100,43 +94,10 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_demonstration">3.1. Demonstration</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="03-demo.html#_run_the_demonstration">3.2. Run this demonstration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_before_getting_started">3.3. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_installing_the_demo">3.4. Installing the demo</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_walkthrough_guide">3.5. Walkthrough guide</a>
-  </li>
-</ul>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="04-workshop.html">4. Workshop</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_installing_the_environment">4.3. Installing the environment</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.4. Delivering the workshop</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="developer-resources.html">5. Developer Resources</a>
@@ -182,221 +143,153 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Solution Pattern: Name Template</h1>
+<h1 class="page">Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization</h1>
 <h1 id="_architecture" class="sect0"><a class="anchor" href="#_architecture"></a><a class="link" href="#_architecture">Architecture</a></h1>
-<div class="openblock partintro">
-<div class="content">
-Introduction for the architecture of this solution pattern.
-</div>
-</div>
 <div class="sect1">
-<h2 id="_common_challenges"><a class="anchor" href="#_common_challenges"></a><a class="link" href="#_common_challenges">1. Common Challenges</a></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="tech_stack"><a class="anchor" href="#tech_stack"></a><a class="link" href="#tech_stack">2. Technology Stack</a></h2>
+<h2 id="tech_stack"><a class="anchor" href="#tech_stack"></a><a class="link" href="#tech_stack">1. Technology Stack</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat supported products</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat OpenShift</a></p>
-</li>
-<li>
-<p>Red Hat Application Foundation</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://access.redhat.com/products/quarkus">Quarkus</a></p>
-</li>
-<li>
-<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-streams-for-apache-kafka">Kafka Streams</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Other open source products:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.postgresql.org/">PostgreSQL database</a></p>
-</li>
-<li>
-<p><a href="https://helm.sh/">Helm</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="in_depth"><a class="anchor" href="#in_depth"></a><a class="link" href="#in_depth">3. An in-depth look at the solution&#8217;s architecture</a></h2>
-<div class="sectionbody">
+<p>What is OpenShift Virtualization</p>
 <div class="paragraph">
-<p>Technical description including all or some of the following: architecture ir ed diagrams. In-depth details of the decisions made and solutions used. Description of each service and what it is used for. Description of any integration.</p>
+<p>Red Hat OpenShift Virtualization is a certified operator in Red Hat OpenShift and is based on the KubeVirt Kubernetes virtualization add-on, which enables managing VM workloads alongside container workloads.</p>
 </div>
-<div class="sect2">
-<h3 id="_using_images"><a class="anchor" href="#_using_images"></a><a class="link" href="#_using_images">3.1. Using images</a></h3>
+<div class="paragraph">
+<p>KubeVirt delivers container-native virtualization by using the Kernel-based Virtual Machine (KVM) Linux Kernel hypervisor within a Kubernetes container. Started by Red Hat, KubeVirt is now a Cloud Native Computing Foundation Incubation project and an open source upstream project. It provides similar capabilities to those of traditional  hypervisor solutions, with the scheduling and orchestrational efficiency of Kuberenetes to provide a mature virtualization platform.</p>
+</div>
+<div class="paragraph">
+<p>Adding OpenShift Virtualization to a Red Hat OpenShift cluster enables deploying and managing virtualized workloads with the same hardware, environment, and tool set that the containerized applications use. Managing virtual machines alongside containerized deployments in a single cluster provides both administrative and economical advantages such as unifying the management interface that system administrators use to improve application reliability while reducing operational overhead and simplifying their management tasks</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/red_hat_open-hybrid-cloud.png" alt="red hat open hybrid cloud" width="30%">
+<img src="_images/ocp_virt_1.png" alt="ocp virt 1" width="40%">
 </div>
 </div>
+</li>
+<li>
+<p>OpenShift Virtualization operator components</p>
 <div class="paragraph">
-<p></p>
+<p>With the OpenShift Virtualization operator installed on a cluster, these resources are available on the cluster to manage virtual machines.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_embedding_html"><a class="anchor" href="#_embedding_html"></a><a class="link" href="#_embedding_html">3.2. Embedding HTML</a></h3>
-  <br>
-  <h3> Embed HTML by surrounding it with with four +s before and after. </h3>
-  <span>View the ascii doc to learn more</span>
-  <br>
-</div>
-<div class="sect2">
-<h3 id="_different_decorators"><a class="anchor" href="#_different_decorators"></a><a class="link" href="#_different_decorators">3.3. Different decorators</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is a Tip</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is a NOTE</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is a WARNING</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is IMPORTANT</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_creating_tables"><a class="anchor" href="#_creating_tables"></a><a class="link" href="#_creating_tables">3.4. Creating  tables</a></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Column A</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Column <strong>A</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Column C</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<div class="ulist">
 <ul>
 <li>
-<p>Lorem Ipsum</p>
+<p>virt-controller works with Cluster API server to orchestrate virtual machine requests.</p>
 </li>
 <li>
-<p>Lorem Ipsum</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Lorem Ipsum</p>
+<p>virt-handler runs in a daemonset pod and coordinates with the VM pod that runs the virt-launcher process to deliver the VM actions.</p>
 </li>
 <li>
-<p>Lorem Ipsum</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_content_that_can_be_copied"><a class="anchor" href="#_content_that_can_be_copied"></a><a class="link" href="#_content_that_can_be_copied">3.5. Content that can be copied</a></h3>
-<div class="paragraph">
-<p>Click below to copy the content</p>
-</div>
-<div class="listingblock console-input">
+<p>libvirtd daemon within the VM pod provides the functionality for performing specific VM actions at the kernel level.</p>
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">oc version #openshift cli client
-oc login --token=&lt;token&gt; --server=&lt;server&gt;</code></pre>
+<img src="_images/ocp_virt_2.png" alt="ocp virt 2" width="80%">
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="more_tech"><a class="anchor" href="#more_tech"></a><a class="link" href="#more_tech">4. About the Technology Stack</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>If you want to include more details about the tech stack you used, this is the place.</p>
+<p>Some benefits of managing VMs through OpenShift Virtualization are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Provides new custom resource definitions (CRDs) and controllers to extend Kubernetes functions by enabling virtualization-related tasks.</p>
+</li>
+<li>
+<p>Supports creating and managing Linux and Windows VMs by using custom resources (CRs), the web console, the CLI, and YAML definition templates to customize VMs easily.</p>
+</li>
+<li>
+<p>Enables creating VMs by cloning a persistent volume claim (PVC) that points to an existing VM&#8217;s persistent volume (PV).</p>
+</li>
+<li>
+<p>Supports importing and managing VMs that are created outside the OpenShift cluster by making use of the Migration Toolkit for Virtualization.</p>
+</li>
+<li>
+<p>Permits moving a Virtual Machine Instance (VMI) and its resources between cluster nodes with the help of live migration strategies, which eliminates the need to stop VMs before moving them.</p>
+</li>
+<li>
+<p>Enables the deployment of virtual machines using pipelines, a methodology typically found in cloud-native approaches. This integration facilitates a more streamlined and automated deployment process, enhancing efficiency and consistency.</p>
+</li>
+<li>
+<p>Empowers IT teams to adopt a modern approach to VM management, incorporating practices like DevOps and CI/CD, which can lead to more agile and responsive operations.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ROSA Architecture Overview:</p>
+<div class="paragraph">
+<p>ROSA uses AWS cloud services in a combination that is familiar to anyone that has deployed Kubernetes in AWS before. The AWS services used include but are not limited to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon EC2</p>
+</li>
+<li>
+<p>AWS Elastic Load Balancing (ELB)</p>
+</li>
+<li>
+<p>Amazon Elastic Block Store (EBS)</p>
+</li>
+<li>
+<p>Amazon S3</p>
+</li>
+<li>
+<p>AWS Virtual Private Cloud (VPC)</p>
+</li>
+<li>
+<p>Amazon Route 53</p>
+</li>
+<li>
+<p>AWS Security Token Service (STS)</p>
+</li>
+<li>
+<p>AWS Identity and Access Management (IAM)</p>
+</li>
+<li>
+<p>AWS PrivateLink</p>
+<div class="paragraph">
+<p>These services come together with Red Hat OpenShift software components to make what is Red Hat OpenShift Service on AWS.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For those that are familiar with running OpenShift on-premises in a self-managed manner, many of the AWS services conveniently replace functionality that would otherwise be handled by local services, such as DNS, storage appliances, or infrastructure. Let us explain the architecture of the platform.</p>
+</div>
+<div class="paragraph">
+<p>This diagram illustrates the network topology of a ROSA with HCP cluster.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_3.png" alt="ocp virt 3" width="100%">
+</div>
+</div>
+<div class="paragraph">
+<p>The following two diagrams illustrate the structure of ROSA with/ HCP clusters in private and public API network deployments</p>
+</div>
+<div class="paragraph">
+<p>This one with a private API.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_4.png" alt="ocp virt 4" width="100%">
+</div>
+</div>
+<div class="paragraph">
+<p>This one with a public API.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp_virt_5.png" alt="ocp virt 5" width="100%">
+</div>
 </div>
 </div>
 </div>

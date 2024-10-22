@@ -83,12 +83,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="02-architecture.html#tech_stack">2.1. Technology stack</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-architecture.html#in_depth">2.2. An in-depth look at the solution&#8217;s architecture</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-architecture.html#more_tech">2.3. More about the technology stack</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -98,43 +92,10 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_demonstration">3.1. Demonstration</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="03-demo.html#_run_the_demonstration">3.2. Run this demonstration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_before_getting_started">3.3. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_installing_the_demo">3.4. Installing the demo</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="03-demo.html#_walkthrough_guide">3.5. Walkthrough guide</a>
-  </li>
-</ul>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="04-workshop.html">4. Workshop</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_installing_the_environment">4.3. Installing the environment</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.4. Delivering the workshop</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="developer-resources.html">5. Developer Resources</a>
@@ -180,7 +141,13 @@
 <h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a>The story behind this solution pattern</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A description of the story that was used to build the demo and architectures of this SP.</p>
+<p>To be most successful in a digitally focused world, IT organizations need an application foundation that meets current needs while preparing them for future modernization and change. Red Hat OpenShift is a unified, enterprise-ready platform for application modernization and cloud-native innovation. Powered by containers, Kubernetes, and DevSecOps capabilities, it provides a foundation for rapidly building, deploying, running, and managing both existing and new applications at scale and with security across hybrid, multicloud, and edge environments.</p>
+</div>
+<div class="paragraph">
+<p>With Red Hat OpenShift Service on AWS i.e ROSA, you get the same consistent and flexible enterprise Kubernetes experience of OpenShift, but managed for you by a team of global SRE experts. You’re able to use the cloud the way it was meant to be used, on demand and with the flexibility to scale and collaborate as you need, when you need, and where you need.</p>
+</div>
+<div class="paragraph">
+<p>In this solution pattern, we will look at how we can modernize Virtual Machines workloads using Red Hat OpenShift Virtualization on ROSA.</p>
 </div>
 </div>
 </div>
@@ -188,7 +155,66 @@
 <h2 id="_the_solution"><a class="anchor" href="#_the_solution"></a>The Solution</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is a summary of the solution</p>
+<p>This solution pattern describes an architectural solution demonstrating how you can modernize your Virtual Machines workloads by running those in Red Hat OpenShift Service on AWS i.e. ROSA. In this solution, we will look at these main features of OpenShift Virtualization:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Virtual Machine Management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Virtual Machine Management by Template:</p>
+<div class="paragraph">
+<p>Red Hat OpenShift Virtualization provides a catalog of preconfigured templates to create a virtual machine and its resources. Templates are available for different versions of RHEL, CentOs, Fedora etc. Red Hat provides virtual machine templates that are preconfigured with the operating system image, default settings for the operating system, workload type, CPU and memory resources.</p>
+</div>
+<div class="paragraph">
+<p>You can also create custom templates to provision VMs in Red Hat OpenShift Virtualization. You can configure different parameters for the templates such as the boot source, workload type, CPU, memory, storage, network interfaces and post installation tasks.</p>
+</div>
+</li>
+<li>
+<p>Virtual Machine Management by InstanceType</p>
+<div class="paragraph">
+<p>OpenShift Virtualization includes a set of pre-defined instance types called common-instancetypes. Some are specialized for specific workloads and others are workload-agnostic. These instance type resources are named according to their series, version, and size. The size value follows the . delimiter and ranges from nano to 8xlarge.</p>
+</div>
+</li>
+<li>
+<p>Virtual Machine Lifecycle Management (GitOps)</p>
+<div class="paragraph">
+<p>With OpenShift GitOps, it is easy to declaratively manage applications, even operators from Git repositories. With OpenShift Virtualization and OpenShift GitOps together, you can now bring your virtual machine infrastructure into the GitOps model and define VMs as code.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Storage Management:</p>
+<div class="paragraph">
+<p>Red Hat OpenShift Virtualization provides several mechanisms to manage the VM disks. Most of these mechanisms rely on PVCs. A VM disk uses a PV that contains a disk image. For example, the root disk of a VM uses a PV that stores the operating system disk image.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>With PVC in Block mode, OpenShift Virtualization transfers the disk image into the volume. The VM disk uses the volume as its back-end device.</p>
+</li>
+<li>
+<p>With PVC in Filesystem mode, OpenShift Virtualization creates a disk.img file at the root of the PV file system and then copies the disk image into the file. The VM disk uses the disk.img as its back-end device.</p>
+<div class="paragraph">
+<p>OpenShift Virtualization introduces new resource types to help create the PVC with optimal parameters for VM disks and copying the disk image into the resulting PV:</p>
+</div>
+</li>
+<li>
+<p>Storage profile:
+For each storage class, a storage profile resource gives default values that are optimized for VM disks. Storage profiles are cluster-wide resources.</p>
+</li>
+<li>
+<p>Data volume:
+A data volume resource describes a VM disk. It groups the PVC definition and the details of the disk image to inject into the VM. Data volumes are namespace-scoped resources.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
