@@ -1,14 +1,12 @@
-= Solution Patterns: Template Name
+= Solution Patterns: Modernize your VM workloads using ROSA with OpenShift Virtualization
 :page-layout: home
 :sectnums:
 :sectlinks:
 :doctype: book
 
-A brief introduction of this solution pattern.
+This solution pattern presents an architectural solution demonstrating how you can modernize your Virtual Machine workloads by running them in the fully managed Red Hat OpenShift Service on AWS, i.e. ROSA platform. In this solution pattern, we will see how we can use a unified cloud-native platform i.e. OCP for running VMs and Containers using the same consistent management tools and interface that you would use for your on-premises workloads.
 
-_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum_
-
-*Contributors:* _Your Name(s) here (can add links to your profile)_
+*Contributors:* Gaurav Midha, Alan Cowles
 
 ++++
  <br>
@@ -20,9 +18,13 @@ Solutions Patterns help you understand the art of the possible with Red Hat's po
 [#use-cases]
 == Use cases
 
+Red Hat OpenShift Virtualization is a feature of Red Hat OpenShift that allows you to run and manage virtual machine (VM) and container workloads side by side.
+
+New development is shifting to containers, and increasingly serverless as well, but organizations also have a huge investment in applications that run as VMs, many of which provide vital services to new and existing containerized applications.
+
 Common use cases that can be address with this architecture are:
 
-- xyz
-- xyz
+- OpenShift Virtualization lets developers bring VMs into containerized workflows by running a VM within a container where they can develop, manage, and deploy VMs side-by-side with containers and serverless, all in one platform. 
+- OpenShift Virtualization combines 2 technologies into a single management platform so organizations can take advantage of the simplicity and speed of containers and Kubernetes, while still benefiting from the applications and services that have been architected for VMs.
 
 include::01-pattern.adoc[]

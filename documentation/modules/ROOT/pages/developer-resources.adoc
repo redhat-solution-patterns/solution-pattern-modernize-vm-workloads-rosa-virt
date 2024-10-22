@@ -1,4 +1,4 @@
-= Solution Patterns: Template Name
+= Solution Patterns: Modernize your VM workloads using ROSA with OpenShift Virtualization
 :sectnums:
 :sectlinks:
 :doctype: book
@@ -6,6 +6,6 @@
 
 = Developer Resources
 
-* Add link to the git repo of the code
-* Add links to whitepapers, ebooks, learning paths, product pages
+* https://www.redhat.com/openshiftvirtualization
+* https://www.redhat.com/en/resources/15-reasons-adopt-openshift-virtualization-ebook[15 reasons to adopt Red Hat OpenShift Virtualization]
 

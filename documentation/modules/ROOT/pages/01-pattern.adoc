@@ -1,7 +1,44 @@
 == The story behind this solution pattern
 
-A description of the story that was used to build the demo and architectures of this SP.
+To be most successful in a digitally focused world, IT organizations need an application foundation that meets current needs while preparing them for future modernization and change. Red Hat OpenShift is a unified, enterprise-ready platform for application modernization and cloud-native innovation. Powered by containers, Kubernetes, and DevSecOps capabilities, it provides a foundation for rapidly building, deploying, running, and managing both existing and new applications at scale and with security across hybrid, multicloud, and edge environments.
+
+With Red Hat OpenShift Service on AWS i.e ROSA, you get the same consistent and flexible enterprise Kubernetes experience of OpenShift, but managed for you by a team of global SRE experts. You’re able to use the cloud the way it was meant to be used, on demand and with the flexibility to scale and collaborate as you need, when you need, and where you need. 
+
+In this solution pattern, we will look at how we can modernize Virtual Machines workloads using Red Hat OpenShift Virtualization on ROSA.
 
 == The Solution
 
-This is a summary of the solution
+This solution pattern describes an architectural solution demonstrating how you can modernize your Virtual Machines workloads by running those in Red Hat OpenShift Service on AWS i.e. ROSA. In this solution, we will look at these main features of OpenShift Virtualization:
+
+* Virtual Machine Management:
+** Virtual Machine Management by Template:
++
+Red Hat OpenShift Virtualization provides a catalog of preconfigured templates to create a virtual machine and its resources. Templates are available for different versions of RHEL, CentOs, Fedora etc. Red Hat provides virtual machine templates that are preconfigured with the operating system image, default settings for the operating system, workload type, CPU and memory resources.
++
+You can also create custom templates to provision VMs in Red Hat OpenShift Virtualization. You can configure different parameters for the templates such as the boot source, workload type, CPU, memory, storage, network interfaces and post installation tasks.
++
+** Virtual Machine Management by InstanceType
++
+OpenShift Virtualization includes a set of pre-defined instance types called common-instancetypes. Some are specialized for specific workloads and others are workload-agnostic. These instance type resources are named according to their series, version, and size. The size value follows the . delimiter and ranges from nano to 8xlarge.
++
+** Virtual Machine Lifecycle Management (GitOps)
++
+With OpenShift GitOps, it is easy to declaratively manage applications, even operators from Git repositories. With OpenShift Virtualization and OpenShift GitOps together, you can now bring your virtual machine infrastructure into the GitOps model and define VMs as code.
++
+* Storage Management:
++
+Red Hat OpenShift Virtualization provides several mechanisms to manage the VM disks. Most of these mechanisms rely on PVCs. A VM disk uses a PV that contains a disk image. For example, the root disk of a VM uses a PV that stores the operating system disk image.
++
+*** With PVC in Block mode, OpenShift Virtualization transfers the disk image into the volume. The VM disk uses the volume as its back-end device.
++
+*** With PVC in Filesystem mode, OpenShift Virtualization creates a disk.img file at the root of the PV file system and then copies the disk image into the file. The VM disk uses the disk.img as its back-end device.
++
+OpenShift Virtualization introduces new resource types to help create the PVC with optimal parameters for VM disks and copying the disk image into the resulting PV:
++
+*** Storage profile: 
+For each storage class, a storage profile resource gives default values that are optimized for VM disks. Storage profiles are cluster-wide resources.
+*** Data volume:
+A data volume resource describes a VM disk. It groups the PVC definition and the details of the disk image to inject into the VM. Data volumes are namespace-scoped resources.
+
+
+

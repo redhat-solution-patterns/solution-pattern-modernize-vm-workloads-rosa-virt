@@ -1,13 +1,63 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization
 :sectnums:
 :sectlinks:
 :doctype: book
 
 = Workshop
 
-what is this workshop and what will be learned
+Here are the workshops which are already available on demo.redhat.com:
 
-== Installing the workshop environment
-=== Before getting started
-=== Installing the environment
-== Delivering the workshop
+- https://demo.redhat.com/catalog?search=tril&item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa-with-trilio.prod[Backup and Recovery of Red Hat OpenShift Virtualization VMs using Trilio (ROSA)]
+- https://demo.redhat.com/catalog?search=factory&item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa.prod[OpenShift Virtualization Migration Factory Demo (ROSA)]
+
+Now we will be looking at our first scenario: Create Virtual Machines using GitOps on ROSA. 
+
+- Installing the environment
+* Create an environment using this https://demo.redhat.com/catalog?search=factory&item=babylon-catalog-prod%2Fsandboxes-gpte.virt-on-rosa.prod[link].
+    
+- Delivering the workshop
+
+1. Login to the bastion host available in the above CI.
++
+image::ocp_virt_6.png[width=100%]
++
+2. Now fork this https://github.com/gmidha1/virtdemos.git[repo] under your github account and after that clone the repo into the bastion host.
+Configure oc cli using the admin logins.
++
+image::ocp_virt_7.png[width=100%]
++
+3. Run ./bootstrap.sh from virtdemos directory. It will deploy the OpenShift GitOps operator.
++
+4. After 2 mins, you will be able to see the OpenShift GitOps operator under Installed operators in OpenShift Console.
++
+image::ocp_virt_8.png[width=100%]
++
+5. Now let us get the url from Routes under Networking for OpenShift GitOps server(ArgoCD) and open this url.
++
+image::ocp_virt_9.png[width=100%]
++
+6. It will open the ArgoCD login screen, now click on “Login via OpenShift” and enter the credentials for OpenShift. After that we will see this screen:
++
+image::ocp_virt_10.png[width=100%]
++
+7. Now we will create a RHEL VM by creating an argocd app using this cli from virtdemos directory: oc apply -f apps/ap.yaml
++
+image::ocp_virt_11.png[width=100%]
++
+8. It will create an application in ArgoCD which in turn will create a RHEL Virtual Machine in OpenShift as shown in below images.
++
+image::ocp_virt_12.png[width=100%]
++
+image::ocp_virt_13.png[width=100%]
++
+9. We can see this virtual machine from the OpenShift console -> Virtualization -> Virtual Machines and we can connect it to the VM using the password we provided in rhel vm yaml.
++
+image::ocp_virt_14.png[width=100%]
++
+image::ocp_virt_15.png[width=100%]
++
+image::ocp_virt_16.png[width=100%]
++
+image::ocp_virt_17.png[width=100%]
++
+10. Now we have successfully deployed a RHEL VM using GitOps in OpenShift and are able to access it using the credentials.

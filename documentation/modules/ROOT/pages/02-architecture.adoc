@@ -1,104 +1,75 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization
 :sectnums:
 :sectlinks:
 :doctype: book
 
 = Architecture 
 
-Introduction for the architecture of this solution pattern.
-
-== Common Challenges 
-
 [#tech_stack]
 == Technology Stack
 
-// Change links and text here as you see fit.
-* Red Hat supported products
-** https://www.redhat.com/en/technologies/cloud-computing/openshift[Red Hat OpenShift]
-** Red Hat Application Foundation
-*** https://access.redhat.com/products/quarkus[Quarkus]
-*** https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-streams-for-apache-kafka[Kafka Streams]
-* Other open source products:
-** https://www.postgresql.org/[PostgreSQL database]
-** https://helm.sh/[Helm]
+*** What is OpenShift Virtualization
++
+Red Hat OpenShift Virtualization is a certified operator in Red Hat OpenShift and is based on the KubeVirt Kubernetes virtualization add-on, which enables managing VM workloads alongside container workloads.
++					
+KubeVirt delivers container-native virtualization by using the Kernel-based Virtual Machine (KVM) Linux Kernel hypervisor within a Kubernetes container. Started by Red Hat, KubeVirt is now a Cloud Native Computing Foundation Incubation project and an open source upstream project. It provides similar capabilities to those of traditional  hypervisor solutions, with the scheduling and orchestrational efficiency of Kuberenetes to provide a mature virtualization platform. 
++
+Adding OpenShift Virtualization to a Red Hat OpenShift cluster enables deploying and managing virtualized workloads with the same hardware, environment, and tool set that the containerized applications use. Managing virtual machines alongside containerized deployments in a single cluster provides both administrative and economical advantages such as unifying the management interface that system administrators use to improve application reliability while reducing operational overhead and simplifying their management tasks
++
+image::ocp_virt_1.png[width=40%]
++
+*** OpenShift Virtualization operator components
++
+With the OpenShift Virtualization operator installed on a cluster, these resources are available on the cluster to manage virtual machines.
++
+- virt-controller works with Cluster API server to orchestrate virtual machine requests.
+
++
+- virt-handler runs in a daemonset pod and coordinates with the VM pod that runs the virt-launcher process to deliver the VM actions.
++
+- libvirtd daemon within the VM pod provides the functionality for performing specific VM actions at the kernel level.
++
+image::ocp_virt_2.png[width=80%]
++
+Some benefits of managing VMs through OpenShift Virtualization are as follows:
+
+    * Provides new custom resource definitions (CRDs) and controllers to extend Kubernetes functions by enabling virtualization-related tasks.
+ 	* Supports creating and managing Linux and Windows VMs by using custom resources (CRs), the web console, the CLI, and YAML definition templates to customize VMs easily.
+ 	* Enables creating VMs by cloning a persistent volume claim (PVC) that points to an existing VM's persistent volume (PV).
+ 	* Supports importing and managing VMs that are created outside the OpenShift cluster by making use of the Migration Toolkit for Virtualization.		
+    * Permits moving a Virtual Machine Instance (VMI) and its resources between cluster nodes with the help of live migration strategies, which eliminates the need to stop VMs before moving them.
+    * Enables the deployment of virtual machines using pipelines, a methodology typically found in cloud-native approaches. This integration facilitates a more streamlined and automated deployment process, enhancing efficiency and consistency.
+    * Empowers IT teams to adopt a modern approach to VM management, incorporating practices like DevOps and CI/CD, which can lead to more agile and responsive operations.
 
 
-[#in_depth]
-== An in-depth look at the solution's architecture
+*** ROSA Architecture Overview:
++
+ROSA uses AWS cloud services in a combination that is familiar to anyone that has deployed Kubernetes in AWS before. The AWS services used include but are not limited to:
++
+- Amazon EC2
+- AWS Elastic Load Balancing (ELB)
+- Amazon Elastic Block Store (EBS)
+- Amazon S3
+- AWS Virtual Private Cloud (VPC)
+- Amazon Route 53
+- AWS Security Token Service (STS)
+- AWS Identity and Access Management (IAM)
+- AWS PrivateLink
++
+These services come together with Red Hat OpenShift software components to make what is Red Hat OpenShift Service on AWS. 
 
-Technical description including all or some of the following: architecture ir ed diagrams. In-depth details of the decisions made and solutions used. Description of each service and what it is used for. Description of any integration.
+For those that are familiar with running OpenShift on-premises in a self-managed manner, many of the AWS services conveniently replace functionality that would otherwise be handled by local services, such as DNS, storage appliances, or infrastructure. Let us explain the architecture of the platform.
 
-=== Using images 
+This diagram illustrates the network topology of a ROSA with HCP cluster.
 
-image::red_hat_open-hybrid-cloud.png[width=30%]
+image::ocp_virt_3.png[width=100%]
 
-{empty}
+The following two diagrams illustrate the structure of ROSA with/ HCP clusters in private and public API network deployments
 
-=== Embedding HTML
+This one with a private API.
 
-++++
-  <br>
-  <h3> Embed HTML by surrounding it with with four +s before and after. </h3>
-  <span>View the ascii doc to learn more</span>
-  <br> 
-++++
+image::ocp_virt_4.png[width=100%]
 
+This one with a public API.
 
-=== Different decorators
-
-[TIP]
-====
-This is a Tip
-====
-
-[NOTE]
-====
-This is a NOTE
-====
-
-[WARNING]
-====
-This is a WARNING
-====
-
-[IMPORTANT]
-====
-This is IMPORTANT
-====
-
-
-=== Creating  tables
- 
-[cols="1a,1a,1a"]
-|===
-| *Column A*  | Column *A* | _Column C_
-|
-* Lorem Ipsum
-* Lorem Ipsum
-
-|
-* Lorem Ipsum
-* Lorem Ipsum
-
-|
-* Lorem Ipsum
-* Lorem Ipsum
-|===
-
-
-
-=== Content that can be copied
-
-Click below to copy the content
-[.console-input]
-[source,shell script]
-----
-oc version #openshift cli client
-oc login --token=<token> --server=<server>
-----
-
-
-[#more_tech]
-== About the Technology Stack
-
-If you want to include more details about the tech stack you used, this is the place.
+image::ocp_virt_5.png[width=100%]

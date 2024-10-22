@@ -1,4 +1,4 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Modernize your VM workloads using ROSA with OpenShift Virtualization
 :sectnums:
 :sectlinks:
 :doctype: book
@@ -7,28 +7,32 @@
 
 == Demonstration
 
-Include here content related to potential existing demos: blogs, articles, recorded videos, walkthrough guides, tutorials.
-
 [#demo-video]
 === Watch a demonstration
 
-In this video you can see xpto:
+Here are the video demos:
 
-video::3yULVMdqJ98[youtube, width=800, height=480]
+Configuring OpenShift Virtualization to run on Red Hat OpenShift Service on AWS
 
-Next, you can learn how to walkthrough this demo.
+video::wBtY3tvjtIU[youtube, width=800, height=480]
 
-== Run the demonstration
+Deploying Virtual machines in OpenShift Virtualization on Red Hat OpenShift Service on AWS
 
-=== Before getting started
-To run this demo, you will need xpto. Adding to that, make sure to have:
+video::7EpmmUIhQ7c[youtube, width=800, height=480]
 
-* ABC
-* XYZ
-* XPTO
+Importing Virtual Machines into OpenShift Virtualization on Red Hat OpenShift Service on AWS (ROSA)
 
-=== Installing the demo
-Installation guide and basic test of the demo installation if needed
+video::5zossjikJm8[youtube, width=800, height=480]
 
-=== Walkthrough guide
-How to run through the demo
+
+Here are the interactive walkthroughs:
+
+- https://app.arcade.software/share/S33zyORtlafU4N3W4XUG[Configuring ROSA for OpenShift Virtualization]
+
+- https://app.arcade.software/share/T6m1DSH4pqRtVuJpxN1s[Create Virtual Machines using OpenShift GitOps]
+
+- https://app.arcade.software/share/collections/VRERvkF9Y5WvSuv3SYZq[Migration tool kit for Virtualization]
+
+- https://app.arcade.software/flows/2WiSXUrFeVXhzDm2KPLO/view[Create VM(using storage on AWS FSx for NetApp ONTAP) on ROSA with OpenShift Virtualization]
+
+- https://app.arcade.software/share/KVCXzB5bwBhSHNkDLff0[Backup and Restore for Red Hat OpenShift Virtualization with Trilio]
