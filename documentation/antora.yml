@@ -1,5 +1,5 @@
 name: solution-pattern
-title: Template Tutorial
+title: Modernize your VM workloads using ROSA with OpenShift Virtualization
 version: master
 nav:
   - modules/ROOT/nav.adoc
